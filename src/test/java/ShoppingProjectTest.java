@@ -3,7 +3,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import apcsa.githubtrack.*;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.jupiter.api.*;
@@ -143,8 +142,8 @@ public class ShoppingProjectTest {
     list.trimExcess();
 
     // Per spec: capacity must never drop below 8
-    assertEquals(8, list.getCapacity(),
-            "trimExcess on an empty list should preserve minimum capacity of 8");
+    assertEquals(
+        8, list.getCapacity(), "trimExcess on an empty list should preserve minimum capacity of 8");
   }
 
   @Test
@@ -194,7 +193,7 @@ public class ShoppingProjectTest {
     list.addToEnd(new ShoppingItem("a", 100));
     list.addToEnd(new ShoppingItem("b", 250));
 
-    assertEquals(3.50, list.getTotalPrice(), 0.001);
+    assertEquals(3.50, list.totalPrice(), 0.001);
   }
 
   // =========================
